@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app version="2.5" 
+    xmlns="http://java.sun.com/xml/ns/javaee" 
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+    xsi:schemaLocation="http://java.sun.com/xml/ns/javaee 
+    http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd">
+    
+    <servlet>
+        <servlet-name>helloworldservlet</servlet-name>
+        <servlet-class>com.sun.jersey.spi.container.servlet.ServletContainer</servlet-class>
+    	<!-- 初始化：制定servlet，服务启动时放到servlet容器中 -->
+        <init-param>
+        <!-- 初始化：指定服务端所在的包 -->
+            <param-name>com.sun.jersey.config.property.packages</param-name>
+            <param-value>com.jersey.rest,com.jersey.demofromweb.resource</param-value>
+        </init-param>
+        <load-on-startup>3</load-on-startup>
+    </servlet>
+    
+    <servlet-mapping>
+        <servlet-name>helloworldservlet</servlet-name>
+        <!-- Url-pattern是命名空间，请求路径 -->
+        <url-pattern>/rest/*</url-pattern>
+    </servlet-mapping>
+    
+      <welcome-file-list>
+        <welcome-file>index.jsp</welcome-file>
+      </welcome-file-list>
+</web-app>
