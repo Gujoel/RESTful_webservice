@@ -4,13 +4,14 @@
 	·soap 一致性高
 
 2、传输参数类型比较
-	·SOAP  目前为止使用过axis2、cxf  参数写法都是写成实体/或者是数组  POJO
+	·SOAP  目前为止使用过axis2、cxf  参数写法都是写成实体/或者是数组  POJO、JSON、XML
 	·REST 可以使用 XML、JSON  高效简洁   使用过 jersey  相应框架客服端都有自己的封装，可以不使用自己手写一个REST的client，需要明白过程
 
 3、请求的URL比较
 	·soap  端点服务URL   使用这个URL指向服务类，在按要求设置请求的方法、参数、返回值类型，或者生产客服端调用（和调用本地方法一样）
+		eg: get  http://localhost:8080/axis2/services/HelloService/sayHello    返回：hello
 	·rest url设计面向资源的curd   get、post、delete、put  服务端定义path，url直接指向具体方法、客服端调用URL直接指向资源，按要求给参数  --高效简洁
-
+		eg: get  http://localhost:8080/RESTful_webService/rest/helloworld/template/刘俊猪  返回我是刘俊猪 
 4、底层协议比较
 	·soap = http+xml
 	·rest  基于http
